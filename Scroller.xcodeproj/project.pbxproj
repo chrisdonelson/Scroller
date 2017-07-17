@@ -62,6 +62,7 @@
 		97C88AB01F1D6B0800962FFD /* Scroller */ = {
 			isa = PBXGroup;
 			children = (
+				97C88ACD1F1D7AC400962FFD /* AppDelegate.swift */,
 				97C88AB31F1D6B0800962FFD /* GameScene.sks */,
 				97C88AB51F1D6B0800962FFD /* Actions.sks */,
 				97C88AB71F1D6B0800962FFD /* GameScene.swift */,
@@ -140,6 +141,7 @@
 				97C88ABD1F1D6B0800962FFD /* Main.storyboard in Resources */,
 				97C88AB41F1D6B0800962FFD /* GameScene.sks in Resources */,
 				97C88ABF1F1D6B0800962FFD /* Assets.xcassets in Resources */,
+				97C88AD21F1D7B0C00962FFD /* Scroller.sks in Resources */,
 				97C88AC21F1D6B0800962FFD /* LaunchScreen.storyboard in Resources */,
 				97C88AB61F1D6B0800962FFD /* Actions.sks in Resources */,
 			);
@@ -152,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C88ACE1F1D7AC400962FFD /* AppDelegate.swift in Sources */,
 				97C88AB81F1D6B0800962FFD /* GameScene.swift in Sources */,
 				97C88ABA1F1D6B0800962FFD /* GameViewController.swift in Sources */,
+				97C88AD01F1D7AFF00962FFD /* Scroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
