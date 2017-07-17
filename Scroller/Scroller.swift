@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import SpriteKit
+
+class Scroller: SKScene {
+    
+    
+    
+    
+}
