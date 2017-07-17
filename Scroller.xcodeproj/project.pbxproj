@@ -14,6 +14,7 @@
 		97C88ABD1F1D6B0800962FFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C88ABB1F1D6B0800962FFD /* Main.storyboard */; };
 		97C88ABF1F1D6B0800962FFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C88ABE1F1D6B0800962FFD /* Assets.xcassets */; };
 		97C88AC21F1D6B0800962FFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C88AC01F1D6B0800962FFD /* LaunchScreen.storyboard */; };
+		97C88ACE1F1D7AC400962FFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C88ACD1F1D7AC400962FFD /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		97C88ABE1F1D6B0800962FFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C88AC11F1D6B0800962FFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C88AC31F1D6B0800962FFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97C88ACD1F1D7AC400962FFD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		97C88AB01F1D6B0800962FFD /* Scroller */ = {
 			isa = PBXGroup;
 			children = (
+				97C88ACD1F1D7AC400962FFD /* AppDelegate.swift */,
 				97C88AB31F1D6B0800962FFD /* GameScene.sks */,
 				97C88AB51F1D6B0800962FFD /* Actions.sks */,
 				97C88AB71F1D6B0800962FFD /* GameScene.swift */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C88ACE1F1D7AC400962FFD /* AppDelegate.swift in Sources */,
 				97C88AB81F1D6B0800962FFD /* GameScene.swift in Sources */,
 				97C88ABA1F1D6B0800962FFD /* GameViewController.swift in Sources */,
 			);
