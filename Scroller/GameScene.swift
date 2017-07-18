@@ -26,6 +26,7 @@ class GameScene: SKScene {
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
+            label.text = "Tap to Begin"
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
@@ -34,7 +35,7 @@ class GameScene: SKScene {
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
         
         if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
+            spinnyNode.lineWidth = 0.75
             
             spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),

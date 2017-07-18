@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1583FD1F1DF69800634112 /* Scroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1583FA1F1DF69800634112 /* Scroller.swift */; };
+		1E1583FE1F1DF69800634112 /* Scroller.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1E1583FB1F1DF69800634112 /* Scroller.sks */; };
+		1E1583FF1F1DF69800634112 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1583FC1F1DF69800634112 /* AppDelegate.swift */; };
 		97C88AB41F1D6B0800962FFD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97C88AB31F1D6B0800962FFD /* GameScene.sks */; };
 		97C88AB61F1D6B0800962FFD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97C88AB51F1D6B0800962FFD /* Actions.sks */; };
 		97C88AB81F1D6B0800962FFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C88AB71F1D6B0800962FFD /* GameScene.swift */; };
@@ -14,11 +17,13 @@
 		97C88ABD1F1D6B0800962FFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C88ABB1F1D6B0800962FFD /* Main.storyboard */; };
 		97C88ABF1F1D6B0800962FFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C88ABE1F1D6B0800962FFD /* Assets.xcassets */; };
 		97C88AC21F1D6B0800962FFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C88AC01F1D6B0800962FFD /* LaunchScreen.storyboard */; };
-		97C88ACA1F1D76DD00962FFD /* Scroller_EasyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C88AC91F1D76DD00962FFD /* Scroller_EasyMode.swift */; };
 		97C88ACC1F1D76FA00962FFD /* Scroller_EasyMode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97C88ACB1F1D76FA00962FFD /* Scroller_EasyMode.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E1583FA1F1DF69800634112 /* Scroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scroller.swift; sourceTree = "<group>"; };
+		1E1583FB1F1DF69800634112 /* Scroller.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scroller.sks; sourceTree = "<group>"; };
+		1E1583FC1F1DF69800634112 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97C88AAE1F1D6B0800962FFD /* Scroller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scroller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C88AB31F1D6B0800962FFD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		97C88AB51F1D6B0800962FFD /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -62,7 +67,9 @@
 		97C88AB01F1D6B0800962FFD /* Scroller */ = {
 			isa = PBXGroup;
 			children = (
-				97C88ACD1F1D7AC400962FFD /* AppDelegate.swift */,
+				1E1583FA1F1DF69800634112 /* Scroller.swift */,
+				1E1583FB1F1DF69800634112 /* Scroller.sks */,
+				1E1583FC1F1DF69800634112 /* AppDelegate.swift */,
 				97C88AB31F1D6B0800962FFD /* GameScene.sks */,
 				97C88AB51F1D6B0800962FFD /* Actions.sks */,
 				97C88AB71F1D6B0800962FFD /* GameScene.swift */,
@@ -138,10 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C88ACC1F1D76FA00962FFD /* Scroller_EasyMode.sks in Resources */,
+				1E1583FE1F1DF69800634112 /* Scroller.sks in Resources */,
 				97C88ABD1F1D6B0800962FFD /* Main.storyboard in Resources */,
 				97C88AB41F1D6B0800962FFD /* GameScene.sks in Resources */,
 				97C88ABF1F1D6B0800962FFD /* Assets.xcassets in Resources */,
-				97C88AD21F1D7B0C00962FFD /* Scroller.sks in Resources */,
 				97C88AC21F1D6B0800962FFD /* LaunchScreen.storyboard in Resources */,
 				97C88AB61F1D6B0800962FFD /* Actions.sks in Resources */,
 			);
@@ -154,10 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97C88ACE1F1D7AC400962FFD /* AppDelegate.swift in Sources */,
+				1E1583FF1F1DF69800634112 /* AppDelegate.swift in Sources */,
+				1E1583FD1F1DF69800634112 /* Scroller.swift in Sources */,
 				97C88AB81F1D6B0800962FFD /* GameScene.swift in Sources */,
 				97C88ABA1F1D6B0800962FFD /* GameViewController.swift in Sources */,
-				97C88AD01F1D7AFF00962FFD /* Scroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
