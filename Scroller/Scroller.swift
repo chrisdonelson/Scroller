@@ -12,6 +12,8 @@ import SpriteKit
 class Scroller: SKScene, SKPhysicsContactDelegate {
     
     var ball: SKSpriteNode!
+    var firstPosition: CGPoint!
+    var lastPosition: CGPoint!
 
     override func sceneDidLoad() {
         ball = childNode(withName: "ball") as! SKSpriteNode
@@ -29,6 +31,24 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = borderBody
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            firstPosition = touch.location(in: self)
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            lastPosition = touch.location(in: self)
+        }
+    }
+
+    
     
     
 }
