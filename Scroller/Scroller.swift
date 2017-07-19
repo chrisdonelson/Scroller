@@ -15,9 +15,32 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     var line:SKShapeNode = SKShapeNode()
     var path:CGMutablePath = CGMutablePath()
     var initialPointSet:Bool = false
+    var posArr = [CGPoint.init(x: 0, y: -749)]
+    var moveBallFlag = false
+    var posCounter = 1
 
     override func sceneDidLoad() {
         ball = childNode(withName: "ball") as! SKSpriteNode
+    }
+    override func update(_ currentTime: TimeInterval) {
+        if(moveBallFlag == true){
+            if(posCounter == posArr.count){
+                ball.position = posArr[posCounter-1]
+                print(posArr.count.description+" "+(posCounter-1).description)
+                print(posArr)
+                posCounter = 1
+                posArr.removeAll()
+                moveBallFlag = false
+            }else{
+                if(posArr.count != 0){
+                    print(posArr.count.description+" "+posCounter.description)
+                    ball.position = posArr[posCounter-1]
+                    posCounter+=1
+                }
+            }
+            
+  
+        }
     }
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -31,7 +54,8 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         eraseLine()
-        
+        posArr.removeAll()
+        moveBallFlag = false
         // Starting position of line
         for t in touches {
             path.move(to: t.location(in: self))
@@ -42,13 +66,25 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             drawLine(touch.location(in: self))
+            posArr.append(touch.location(in: self))
+            addLine()
+            print(posArr.count)
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        addLine()
+        //addLine()
+        moveBallFlag = true;
+        //moveBall()
     }
-    
+    func moveBall(){
+        for p in posArr{
+            
+            ball.position = p
+            print(ball.position.debugDescription)
+            //sleep(1)
+        }
+    }
     func drawLine(_ point: CGPoint) {
         path.addLine(to: point)
         line.path = path
