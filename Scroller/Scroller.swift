@@ -55,10 +55,12 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     }
     
     func addLine() {
-        line.name = "line"
-        line.strokeColor = UIColor.white
-        line.lineWidth = 8
-        addChild(line)
+        if self.childNode(withName: "line") == nil {
+            line.name = "line"
+            line.strokeColor = UIColor.white
+            line.lineWidth = 8
+            addChild(line)
+        }
     }
     
     func eraseLine() {
