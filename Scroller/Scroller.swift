@@ -22,7 +22,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     var frameRate = 0
     var pauseButton: SKSpriteNode!
     var xDelta: CGFloat = 0
-
+    var difficulty = 5
 
 
     override func sceneDidLoad() {
@@ -30,7 +30,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
         bird = childNode(withName:"bird") as! SKSpriteNode
         //ball.position = CGPoint.init(x: -500, y: 300)
         ball.physicsBody?.affectedByGravity = false
-        var difficulty = 5
+     
         xDelta = CGFloat(difficulty)
     }
     
@@ -46,18 +46,22 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
             if(posCounter == posArr.count-1){
               
                 posCounter = 1
-                posArr.removeAll()
+                //posArr.removeAll()
                 moveBallFlag = false
                 ball.physicsBody?.affectedByGravity = true
             }else{
                 if(posArr.count != 0){
                     ball.physicsBody?.affectedByGravity = false
                     if(!toggle){
-                        print(posArr.count.description+" "+posCounter.description)
+                        print("am not paused")
+                  
                         if(ball.position.x <= posArr[posCounter-1].x){
-                            ball.position = CGPoint.init(x: posArr[posCounter-1].x-1,y: posArr[posCounter-1].y)
+                            print("in da loop")
+                            ball.position = CGPoint.init(x: posArr[posCounter-1].x,y: posArr[posCounter-1].y)
                         }
                         posCounter+=1
+                    }else{
+                        print("am paused")
                     }
                     
                 }
@@ -98,13 +102,13 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     
     var toggle = false
     func pause(){
-       // print("pause")
+    
         if(!toggle){
             
             xDelta =  CGFloat.init(0)
             toggle = !toggle
         }else{
-            xDelta = CGFloat.init(3)
+            xDelta = CGFloat(difficulty)
             toggle = !toggle
         }
     }
