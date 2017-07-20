@@ -10,6 +10,8 @@
 		1ED4303E1F20047F00209747 /* Scroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4303B1F20047F00209747 /* Scroller.swift */; };
 		1ED4303F1F20047F00209747 /* Scroller.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1ED4303C1F20047F00209747 /* Scroller.sks */; };
 		1ED430401F20047F00209747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4303D1F20047F00209747 /* AppDelegate.swift */; };
+		1ED430421F20815700209747 /* DragDropSwiftImages in Resources */ = {isa = PBXBuildFile; fileRef = 1ED430411F20815700209747 /* DragDropSwiftImages */; };
+		1ED430441F20819400209747 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ED430431F20819400209747 /* bird.png */; };
 		97C88AB41F1D6B0800962FFD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97C88AB31F1D6B0800962FFD /* GameScene.sks */; };
 		97C88AB61F1D6B0800962FFD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 97C88AB51F1D6B0800962FFD /* Actions.sks */; };
 		97C88AB81F1D6B0800962FFD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C88AB71F1D6B0800962FFD /* GameScene.swift */; };
@@ -24,6 +26,8 @@
 		1ED4303B1F20047F00209747 /* Scroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scroller.swift; sourceTree = "<group>"; };
 		1ED4303C1F20047F00209747 /* Scroller.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scroller.sks; sourceTree = "<group>"; };
 		1ED4303D1F20047F00209747 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1ED430411F20815700209747 /* DragDropSwiftImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DragDropSwiftImages; sourceTree = "<group>"; };
+		1ED430431F20819400209747 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bird.png; path = DragDropSwiftImages/bird.png; sourceTree = "<group>"; };
 		97C88AAE1F1D6B0800962FFD /* Scroller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scroller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C88AB31F1D6B0800962FFD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		97C88AB51F1D6B0800962FFD /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				97C88AB91F1D6B0800962FFD /* GameViewController.swift */,
 				97C88ABB1F1D6B0800962FFD /* Main.storyboard */,
 				97C88ABE1F1D6B0800962FFD /* Assets.xcassets */,
+				1ED430431F20819400209747 /* bird.png */,
+				1ED430411F20815700209747 /* DragDropSwiftImages */,
 				97C88AC01F1D6B0800962FFD /* LaunchScreen.storyboard */,
 				97C88AC31F1D6B0800962FFD /* Info.plist */,
 				97C88AC91F1D76DD00962FFD /* Scroller_EasyMode.swift */,
@@ -145,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C88ACC1F1D76FA00962FFD /* Scroller_EasyMode.sks in Resources */,
+				1ED430421F20815700209747 /* DragDropSwiftImages in Resources */,
+				1ED430441F20819400209747 /* bird.png in Resources */,
 				1ED4303F1F20047F00209747 /* Scroller.sks in Resources */,
 				97C88ABD1F1D6B0800962FFD /* Main.storyboard in Resources */,
 				97C88AB41F1D6B0800962FFD /* GameScene.sks in Resources */,

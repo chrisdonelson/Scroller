@@ -12,29 +12,43 @@ import SpriteKit
 class Scroller: SKScene, SKPhysicsContactDelegate {
     
     var ball: SKSpriteNode!
+    var bird: SKSpriteNode!
     var line:SKShapeNode = SKShapeNode()
     var path:CGMutablePath = CGMutablePath()
     var initialPointSet:Bool = false
     var posArr = [CGPoint.init(x: 0, y: -749)]
     var moveBallFlag = false
     var posCounter = 1
+    var frameRate = 0
 
     override func sceneDidLoad() {
         ball = childNode(withName: "ball") as! SKSpriteNode
+        bird = childNode(withName:"bird") as! SKSpriteNode
     }
     override func update(_ currentTime: TimeInterval) {
+        line.position = CGPoint.init(x: line.position.x-1,y: line.position.y)
+        
+        bird.position = CGPoint.init(x: bird.position.x-1, y: bird.position.y)
+        //self.frameRate = 10
         if(moveBallFlag == true){
             if(posCounter == posArr.count){
-                ball.position = posArr[posCounter-1]
+                //move ball up and down
+                ball.position = CGPoint.init(x: posArr[posCounter-1].x,y: posArr[posCounter-1].y)
+                ball.physicsBody?.affectedByGravity = true
+                
                 print(posArr.count.description+" "+(posCounter-1).description)
                 print(posArr)
+                
+             
                 posCounter = 1
                 posArr.removeAll()
                 moveBallFlag = false
             }else{
                 if(posArr.count != 0){
+                    ball.physicsBody?.affectedByGravity = false
+
                     print(posArr.count.description+" "+posCounter.description)
-                    ball.position = posArr[posCounter-1]
+                    ball.position = CGPoint.init(x: posArr[posCounter-1].x,y: posArr[posCounter-1].y)
                     posCounter+=1
                 }
             }
