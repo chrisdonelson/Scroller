@@ -16,7 +16,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     var line:SKShapeNode = SKShapeNode()
     var path:CGMutablePath = CGMutablePath()
     var initialPointSet:Bool = false
-    var posArr = [CGPoint.init(x: 0, y: -749)]
+    var posArr = [CGPoint.init(x: -500, y: 200)]
     var moveBallFlag = false
     var posCounter = 1
     var frameRate = 0
@@ -24,22 +24,30 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     override func sceneDidLoad() {
         ball = childNode(withName: "ball") as! SKSpriteNode
         bird = childNode(withName:"bird") as! SKSpriteNode
+        //ball.position = CGPoint.init(x: -500, y: 300)
+        ball.physicsBody?.affectedByGravity = false
     }
     override func update(_ currentTime: TimeInterval) {
         line.position = CGPoint.init(x: line.position.x-1,y: line.position.y)
-        
         bird.position = CGPoint.init(x: bird.position.x-1, y: bird.position.y)
+        ball.position.x-=1
+        
+       // self.position.x-=1
+        if(line.position.x <= -400){
+          
+        }
         //self.frameRate = 10
         if(moveBallFlag == true){
-            if(posCounter == posArr.count){
+            if(posCounter == posArr.count-1){
                 //move ball up and down
-                ball.position = CGPoint.init(x: posArr[posCounter-1].x,y: posArr[posCounter-1].y)
-                ball.physicsBody?.affectedByGravity = true
+               // ball.position = CGPoint.init(x: posArr[posCounter-1].x-1,y: posArr[posCounter-1].y)
+                //ball.physicsBody?.affectedByGravity = true
                 
                 print(posArr.count.description+" "+(posCounter-1).description)
                 print(posArr)
                 
-             
+               //line.position.x = 0
+               //eraseLine()
                 posCounter = 1
                 posArr.removeAll()
                 moveBallFlag = false
@@ -48,7 +56,9 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
                     ball.physicsBody?.affectedByGravity = false
 
                     print(posArr.count.description+" "+posCounter.description)
-                    ball.position = CGPoint.init(x: posArr[posCounter-1].x,y: posArr[posCounter-1].y)
+                    if(ball.position.x <= posArr[posCounter-1].x){
+                        ball.position = CGPoint.init(x: posArr[posCounter-1].x-1,y: posArr[posCounter-1].y)
+                    }
                     posCounter+=1
                 }
             }
@@ -61,7 +71,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
         ball.physicsBody?.affectedByGravity = true
         
         // Creates an invisible border at the bottom of the screen (Change y)
-        let borderBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -275.0, y: -374.0, width: 1334.0, height: 750.0))
+        let borderBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -666.0, y: -374.0, width: 1334.0, height: 750.0))
         borderBody.friction = 0
         self.physicsBody = borderBody
     }
@@ -69,6 +79,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         eraseLine()
         posArr.removeAll()
+        posCounter = 1
         moveBallFlag = false
         // Starting position of line
         for t in touches {
@@ -96,7 +107,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
             
             ball.position = p
             print(ball.position.debugDescription)
-            //sleep(1)
+        
         }
     }
     func drawLine(_ point: CGPoint) {
@@ -114,7 +125,9 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     }
     
     func eraseLine() {
+        line.position.x = 0
         self.childNode(withName: "line")?.removeFromParent()
+        
         initialPointSet = false
         path = CGMutablePath()
     }
