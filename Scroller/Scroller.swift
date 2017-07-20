@@ -20,46 +20,46 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     var moveBallFlag = false
     var posCounter = 1
     var frameRate = 0
+    var pauseButton: SKSpriteNode!
+    var xDelta: CGFloat = 0
+
+
 
     override func sceneDidLoad() {
         ball = childNode(withName: "ball") as! SKSpriteNode
         bird = childNode(withName:"bird") as! SKSpriteNode
         //ball.position = CGPoint.init(x: -500, y: 300)
         ball.physicsBody?.affectedByGravity = false
+        var difficulty = 5
+        xDelta = CGFloat(difficulty)
     }
+    
+    //var difficulty = 5
+    
     override func update(_ currentTime: TimeInterval) {
-        line.position = CGPoint.init(x: line.position.x-1,y: line.position.y)
-        bird.position = CGPoint.init(x: bird.position.x-1, y: bird.position.y)
-        ball.position.x-=1
+        line.position = CGPoint.init(x: line.position.x-xDelta,y: line.position.y)
+        bird.position = CGPoint.init(x: bird.position.x-xDelta,y: bird.position.y)
+        ball.position.x-=xDelta
         
-       // self.position.x-=1
-        if(line.position.x <= -400){
-          
-        }
-        //self.frameRate = 10
+    
         if(moveBallFlag == true){
             if(posCounter == posArr.count-1){
-                //move ball up and down
-               // ball.position = CGPoint.init(x: posArr[posCounter-1].x-1,y: posArr[posCounter-1].y)
-                //ball.physicsBody?.affectedByGravity = true
-                
-                print(posArr.count.description+" "+(posCounter-1).description)
-                print(posArr)
-                
-               //line.position.x = 0
-               //eraseLine()
+              
                 posCounter = 1
                 posArr.removeAll()
                 moveBallFlag = false
+                ball.physicsBody?.affectedByGravity = true
             }else{
                 if(posArr.count != 0){
                     ball.physicsBody?.affectedByGravity = false
-
-                    print(posArr.count.description+" "+posCounter.description)
-                    if(ball.position.x <= posArr[posCounter-1].x){
-                        ball.position = CGPoint.init(x: posArr[posCounter-1].x-1,y: posArr[posCounter-1].y)
+                    if(!toggle){
+                        print(posArr.count.description+" "+posCounter.description)
+                        if(ball.position.x <= posArr[posCounter-1].x){
+                            ball.position = CGPoint.init(x: posArr[posCounter-1].x-1,y: posArr[posCounter-1].y)
+                        }
+                        posCounter+=1
                     }
-                    posCounter+=1
+                    
                 }
             }
             
@@ -77,17 +77,37 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         eraseLine()
+
         posArr.removeAll()
         posCounter = 1
+        
         moveBallFlag = false
         // Starting position of line
+        
+        pauseButton = childNode(withName: "pause") as! SKSpriteNode
         for t in touches {
+            if pauseButton.contains(t.location(in: self)){
+                self.pause()
+            }
             path.move(to: t.location(in: self))
         }
         
     }
     
+    var toggle = false
+    func pause(){
+       // print("pause")
+        if(!toggle){
+            
+            xDelta =  CGFloat.init(0)
+            toggle = !toggle
+        }else{
+            xDelta = CGFloat.init(3)
+            toggle = !toggle
+        }
+    }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             drawLine(touch.location(in: self))
@@ -98,9 +118,9 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //addLine()
+     
         moveBallFlag = true;
-        //moveBall()
+
     }
     func moveBall(){
         for p in posArr{
