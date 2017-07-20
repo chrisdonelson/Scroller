@@ -81,10 +81,10 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        eraseLine()
-
-        posArr.removeAll()
+        if(!toggle){
+            eraseLine()
+            posArr.removeAll()
+        }
         posCounter = 1
         
         moveBallFlag = false
@@ -117,7 +117,7 @@ class Scroller: SKScene, SKPhysicsContactDelegate {
             drawLine(touch.location(in: self))
             posArr.append(touch.location(in: self))
             addLine()
-            print(posArr.count)
+           //print(posArr.count)
         }
     }
     
